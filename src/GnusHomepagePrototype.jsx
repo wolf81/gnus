@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 
-// ---- Accent theme tokens ----
 const ACCENTS = {
-  business: { key: "business", name: "Businesses", color: "#18AEF0" }, // teal‑blue
-  developer: { key: "developer", name: "Developers", color: "#36EDB5" }, // teal‑green
-  // crypto: { key: "crypto", name: "Crypto / Web3", color: "#A66CFF" }, // REMOVE
-};
+  teal: "#36EDB5", // teal‑green
+  blue: "#18AEF0", // teal‑blue
+  violet: "#A66CFF", // violet
+}
 
 // Dev-time sanity checks (non-breaking)
 if (typeof window !== "undefined") {
-  console.assert(ACCENTS.business && ACCENTS.developer, "ACCENTS map is missing keys");
+  console.assert(ACCENTS.teal && ACCENTS.blue && ACCENTS.violet, "ACCENTS map is missing keys");
 }
 
 // ---- Muted, textured UI helpers ----
@@ -39,6 +38,17 @@ function texturedChipStyle(color) {
   };
 }
 
+const SmallTexturedButton = ({ color, href = "#", className = "", children }) => (
+    <div className="flex items-center gap-2">
+      <button
+        className="px-3 py-1.5 rounded-full text-sm border transition hover:opacity-90 focus:outline-none border-transparent text-white"
+        style={{ background: color}}
+      >
+        {children}
+      </button>
+    </div>
+);
+
 const TexturedButton = ({ color, href = "#", className = "", children }) => (
   <a
     href={href}
@@ -64,7 +74,7 @@ function texturedUnderlineStyle(color) {
 
 // Accepts `children` (the logo content) and an optional `color` override
 export function LogoWrap({ children, color }) {
-  const violet = color ?? "#A66CFF"; // fallback if ACCENTS not passed in
+  const violet = color ?? ACCENTS.violet; // fallback if ACCENTS not passed in
 
   return (
     <div
@@ -87,7 +97,7 @@ export function LogoWrap({ children, color }) {
 }
 
 export function ContentWrap({ children, color }) {
-  const violet = color ?? "#A66CFF"; // fallback if ACCENTS not passed in
+  const violet = color ?? ACCENTS.violet; // fallback if ACCENTS not passed in
 
   return (
     <div className="rounded-2xl p-6 border border-white/10 bg-white/[0.02]">
@@ -110,25 +120,25 @@ function GnusLogo({ size = 32 }) {
   );
 }
 
-function AccentSwitcher({ accent, setAccent }) {
-  return (
-    <div className="flex items-center gap-2">
-      {Object.values(ACCENTS).map((opt) => (
-        <button
-          key={opt.key}
-          onClick={() => setAccent(opt)}
-          className={`px-3 py-1.5 rounded-full text-sm border transition hover:opacity-90 focus:outline-none ${
-            accent.key === opt.key ? `border-transparent text-white` : `border-white/20 text-white`
-          }`}
-          style={{ background: accent.key === opt.key ? opt.color : "transparent" }}
-          aria-pressed={accent.key === opt.key}
-        >
-          {opt.name}
-        </button>
-      ))}
-    </div>
-  );
-}
+// function AccentSwitcher({ accent, setAccent }) {
+//   return (
+//     <div className="flex items-center gap-2">
+//       {Object.values(ACCENTS).map((opt) => (
+//         <button
+//           key={opt.key}
+//           onClick={() => setAccent(opt)}
+//           className={`px-3 py-1.5 rounded-full text-sm border transition hover:opacity-90 focus:outline-none ${
+//             accent.key === opt.key ? `border-transparent text-white` : `border-white/20 text-white`
+//           }`}
+//           style={{ background: accent.key === opt.key ? opt.color : "transparent" }}
+//           aria-pressed={accent.key === opt.key}
+//         >
+//           {opt.name}
+//         </button>
+//       ))}
+//     </div>
+//   );
+// }
 
 function Nav({ accent, setAccent }) {
   return (
@@ -162,8 +172,8 @@ function Nav({ accent, setAccent }) {
           </a>
         </nav>
         <div className="flex items-center gap-3">
-          <AccentSwitcher accent={accent} setAccent={setAccent} />
-          {/* Removed "Start Building" button */}
+            <SmallTexturedButton color={ACCENTS.blue} href="#">Book a Demo<span aria-hidden="true"></span></SmallTexturedButton>
+            <SmallTexturedButton color={ACCENTS.teal} href="#">Start Earning<span aria-hidden="true"></span></SmallTexturedButton>
         </div>
       </div>
     </header>
@@ -172,9 +182,9 @@ function Nav({ accent, setAccent }) {
 
 // Page-wide retro space background (CSS-only, fixed behind content)
 function PageBackground() {
-  const teal = ACCENTS.developer.color;
-  const blue = ACCENTS.business.color;
-  // const violet = ACCENTS.crypto.color; // REMOVE
+  const teal = ACCENTS.teal;
+  const blue = ACCENTS.blue;
+
   return (
     <div className="fixed inset-0 -z-10 pointer-events-none" aria-hidden="true">
       {/* base */}
@@ -241,8 +251,8 @@ function Hero({ accent }) {
 }
 
 function DualProposition({ accent }) {
-  const businessAccent = ACCENTS.business.color;
-  const devAccent = ACCENTS.developer.color;
+  const businessAccent = ACCENTS.blue;
+  const devAccent = ACCENTS.teal;
 
   const Icon = ({ type, color = "#fff", size = 26 }) => {
     const common = {
@@ -392,8 +402,8 @@ function DualProposition({ accent }) {
 }
 
 function HowItWorks({ accent }) {
-  const businessAccent = ACCENTS.business.color;
-  const developerAccent = ACCENTS.developer.color;
+  const businessAccent = ACCENTS.blue;
+  const developerAccent = ACCENTS.teal;
 
   const steps = [
     { title: "Idle power, activated", text: "Devices contribute unused GPU/CPU capacity." },
@@ -423,7 +433,7 @@ function HowItWorks({ accent }) {
         <h2 className="text-3xl font-semibold">How It Works</h2>
         <div
           className="mt-2 h-1.5 w-24 rounded"
-          style={texturedUnderlineStyle(ACCENTS.business.color)}
+          style={texturedUnderlineStyle(ACCENTS.blue)}
         />
         <p className="text-white/80 mt-2">Get started in minutes with our streamlined processes.</p>
         {/* 4-step explainer */}
@@ -521,7 +531,7 @@ function NetworkPerformance({ accent }) {
       <h2 className="text-3xl font-semibold">Network Performance</h2>
       <div
         className="mt-2 h-1.5 w-24 rounded"
-        style={texturedUnderlineStyle(ACCENTS.business.color)}
+        style={texturedUnderlineStyle(ACCENTS.blue)}
       />
       <p className="text-white/80 mt-2">The GNUS network is ever growing.</p>
       {/* Speckled stats box with brand two-tone speckles, no vertical grain */}
@@ -648,7 +658,7 @@ function ClientsPartners({ accent }) {
       <h2 className="text-3xl font-semibold">Clients and Partners</h2>
       <div
         className="mt-2 h-1.5 w-24 rounded"
-        style={texturedUnderlineStyle(ACCENTS.business.color)}
+        style={texturedUnderlineStyle(ACCENTS.blue)}
       />
       <p className="text-white/80 mt-2">Trusted by 200+ companies worldwide.</p>
 
@@ -676,7 +686,7 @@ function Ecosystem({ accent }) {
       <h2 className="text-3xl font-semibold">GNUS Ecosystem</h2>
       <div
         className="mt-2 h-1.5 w-24 rounded"
-        style={texturedUnderlineStyle(ACCENTS.business.color)}
+        style={texturedUnderlineStyle(ACCENTS.blue)}
       />
       <p className="text-white/80 mt-2">Explore the wider services GNUS offers.</p>
       <div className="mt-8 grid md:grid-cols-4 gap-6">
@@ -711,7 +721,7 @@ function WhatsNew({ accent }) {
       </div>
       <div
         className="mt-2 h-1.5 w-24 rounded"
-        style={texturedUnderlineStyle(ACCENTS.business.color)}
+        style={texturedUnderlineStyle(ACCENTS.blue)}
       />
       <p className="text-white/80 mt-2">Find out about the latest GNUS developments.</p>
       <div className="mt-8 grid md:grid-cols-2 gap-6 items-start">
@@ -832,7 +842,7 @@ function LeadershipTeam({ accent }) {
       </div>
       <div
         className="mt-2 h-1.5 w-24 rounded"
-        style={texturedUnderlineStyle(ACCENTS.business.color)}
+        style={texturedUnderlineStyle(ACCENTS.blue)}
       />
       <p className="text-white/80 mt-6 max-w-3xl">
         Built by Top Talent from Nvidia, Google, Amazon, and more. Dedicated to making AI compute
@@ -882,7 +892,7 @@ function LeadershipTeam({ accent }) {
                       className="inline-flex items-center gap-2 text-sm font-medium hover:opacity-90"
                       aria-label="Kenneth Hurley on X"
                     >
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill={ACCENTS.business.color} aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill={ACCENTS.blue} aria-hidden="true">
                         <path d="M18.244 2H22L13.52 11.44 22 22h-4.756l-6.064-7.31L6.828 22H2l8.965-10.42L2 2h4.756l5.395 6.51L18.244 2z" />
                       </svg>
                       <span className="sr-only">X</span>
@@ -900,8 +910,8 @@ function LeadershipTeam({ accent }) {
 }
 
 function CTA({ accent }) {
-  const businessAccent = ACCENTS.business.color; // blue (Sales)
-  const devAccent = ACCENTS.developer.color; // teal/green (Developers)
+  const businessAccent = ACCENTS.blue; // blue (Sales)
+  const devAccent = ACCENTS.teal; // teal/green (Developers)
 
   return (
     <section id="cta" className="relative overflow-hidden">
@@ -1007,7 +1017,7 @@ function Footer() {
 }
 
 export default function GnusHomepagePrototype() {
-  const [accent, setAccent] = useState(ACCENTS.business);
+  const [accent, setAccent] = useState(ACCENTS.blue);
 
   return (
     <>
