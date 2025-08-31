@@ -963,7 +963,7 @@ function CTA({ accent }) {
 function Footer() {
   return (
     <footer className="border-t border-white/10 mt-16">
-      <div className="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-6 text-sm">
+      <div className="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-[minmax(0,220px)_1fr] gap-6 text-sm">
         <div>
           <div className="flex items-center gap-2">
             <GnusLogo size={28} />
@@ -1059,10 +1059,9 @@ function Footer() {
           </div>
         </div>
       </div>
-        <div className="text-white/60">
-          <div>© {new Date().getFullYear()} GNUS. All rights reserved.</div>
-        </div>
-
+      <div className="text-white/60">
+        <div>© {new Date().getFullYear()} GNUS. All rights reserved.</div>
+      </div>
     </footer>
   );
 }
