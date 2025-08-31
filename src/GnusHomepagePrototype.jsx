@@ -976,13 +976,19 @@ function Footer() {
           <div className="space-y-2">
             <div className="font-medium text-white">For Businesses</div>
             <a href="#how" className="block text-white/70 hover:text-white">
-              How it works
+              GPU Processing
             </a>
             <a href="#business" className="block text-white/70 hover:text-white">
-              Businesses
+              Pricing
             </a>
             <a href="#dev" className="block text-white/70 hover:text-white">
-              Developers
+              Customers
+            </a>
+            <a href="#dev" className="block text-white/70 hover:text-white">
+              Docs
+            </a>
+             <a href="#dev" className="block text-white/70 hover:text-white">
+              Book a Demo
             </a>
           </div>
           <div className="space-y-2">
@@ -1012,7 +1018,7 @@ function Footer() {
           <div className="space-y-2">
             <div className="font-medium text-white">Genius Ventures</div>
             <a href="#ecosystem" className="block text-white/70 hover:text-white">
-              Ecosystem
+              About
             </a>
             <a href="#" className="block text-white/70 hover:text-white">
               Blog
