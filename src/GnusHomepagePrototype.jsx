@@ -1073,7 +1073,8 @@ function Footer() {
 }
 
 export default function GnusHomepagePrototype() {
-  const [accent, setAccent] = useState(ACCENTS.blue);
+  // Use an object for accent, not just the color string
+  const [accent, setAccent] = useState({ color: ACCENTS.blue });
 
   return (
     <>
