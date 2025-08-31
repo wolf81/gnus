@@ -86,6 +86,18 @@ export function LogoWrap({ children, color }) {
   );
 }
 
+export function ContentWrap({ children, color }) {
+  const violet = color ?? "#A66CFF"; // fallback if ACCENTS not passed in
+
+  return (
+    <div className="rounded-2xl p-6 border border-white/10 bg-white/[0.02]">
+      <div className="flex items-center justify-center opacity-95" style={{ color: violet }}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
 // ---- GNUS Logo (inline SVG — stable) ----
 function GnusLogo({ size = 32 }) {
   return (
@@ -123,9 +135,7 @@ function Nav({ accent, setAccent }) {
     <header className="relative z-20 bg-black/50 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <LogoWrap>
-            <GnusLogo size={32} />
-          </LogoWrap>
+          <GnusLogo size={32} />
           <span className="font-semibold tracking-wide">GNUS.AI</span>
         </div>
         <nav className="hidden md:flex items-center gap-6 text-sm text-white/80">
@@ -552,28 +562,6 @@ function NetworkPerformance({ accent }) {
 }
 
 function ClientsPartners({ accent }) {
-  // Logos use brand violet with a subtle retro paper texture in the tile
-  const violet = ACCENTS.crypto.color;
-
-  // const LogoWrap = ({ children }) => (
-  //   <div
-  //     className="h-14 flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] px-4 relative overflow-hidden"
-  //     style={{
-  //       backgroundImage: `
-  //         radial-gradient(1px 1px at 25% 30%, rgba(255,255,255,0.08) 0, transparent 1.5px),
-  //         radial-gradient(1px 1px at 70% 65%, rgba(0,0,0,0.06) 0, transparent 1.5px),
-  //         repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 3px)
-  //       `,
-  //       boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.06)",
-  //       filter: "saturate(88%) brightness(98%)",
-  //     }}
-  //   >
-  //     <div className="opacity-95" style={{ color: violet }}>
-  //       {children}
-  //     </div>
-  //   </div>
-  // );
-
   const Bandcamp = () => (
     <svg
       viewBox="0 0 140 32"
@@ -670,18 +658,18 @@ function ClientsPartners({ accent }) {
       <p className="text-white/80 mt-2">Trusted by 200+ companies worldwide.</p>
 
       <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 items-center">
-        <LogoWrap>
+        <ContentWrap>
           <Bandcamp />
-        </LogoWrap>
-        <LogoWrap>
+        </ContentWrap>
+        <ContentWrap>
           <Ditto />
-        </LogoWrap>
-        <LogoWrap>
+        </ContentWrap>
+        <ContentWrap>
           <AlphaGrowth />
-        </LogoWrap>
-        <LogoWrap>
+        </ContentWrap>
+        <ContentWrap>
           <Graffiti />
-        </LogoWrap>
+        </ContentWrap>
       </div>
     </section>
   );
@@ -973,9 +961,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-6 text-sm">
         <div>
           <div className="flex items-center gap-2">
-            <LogoWrap>
-              <GnusLogo size={28} />
-            </LogoWrap>
+            <GnusLogo size={28} />
             <span className="font-semibold">GNUS</span>
           </div>
           <p className="text-white/70 mt-2">Decentralized GPU network for affordable AI compute.</p>
