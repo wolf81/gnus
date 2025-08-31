@@ -963,17 +963,18 @@ function CTA({ accent }) {
 function Footer() {
   return (
     <footer className="border-t border-white/10 mt-16">
-      <div className="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-6 text-sm">
+      <div className="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-6 text-sm">
         <div>
           <div className="flex items-center gap-2">
             <GnusLogo size={28} />
             <span className="font-semibold">GNUS</span>
           </div>
-          <p className="text-white/70 mt-2">Decentralized GPU network for affordable AI compute.</p>
+          <p className="text-white/70 mt-2">Decentralized GPU network</p>
+          <p className="text-white/70 mt-2">for affordable AI compute.</p>
         </div>
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-7 gap-6">
           <div className="space-y-2">
-            <div className="font-medium text-white">Product</div>
+            <div className="font-medium text-white">For Businesses</div>
             <a href="#how" className="block text-white/70 hover:text-white">
               How it works
             </a>
@@ -982,6 +983,42 @@ function Footer() {
             </a>
             <a href="#dev" className="block text-white/70 hover:text-white">
               Developers
+            </a>
+          </div>
+          <div className="space-y-2">
+            <div className="font-medium text-white">For Developers</div>
+            <a href="#ecosystem" className="block text-white/70 hover:text-white">
+              Ecosystem
+            </a>
+            <a href="#" className="block text-white/70 hover:text-white">
+              Blog
+            </a>
+            <a href="#" className="block text-white/70 hover:text-white">
+              Contact
+            </a>
+          </div>
+          <div className="space-y-2">
+            <div className="font-medium text-white">Resources</div>
+            <a href="#ecosystem" className="block text-white/70 hover:text-white">
+              Terms
+            </a>
+            <a href="#" className="block text-white/70 hover:text-white">
+              Privacy
+            </a>
+            <a href="#" className="block text-white/70 hover:text-white">
+              Security
+            </a>
+          </div>
+          <div className="space-y-2">
+            <div className="font-medium text-white">Genius Ventures</div>
+            <a href="#ecosystem" className="block text-white/70 hover:text-white">
+              Ecosystem
+            </a>
+            <a href="#" className="block text-white/70 hover:text-white">
+              Blog
+            </a>
+            <a href="#" className="block text-white/70 hover:text-white">
+              Contact
             </a>
           </div>
           <div className="space-y-2">
@@ -996,22 +1033,36 @@ function Footer() {
               Contact
             </a>
           </div>
-        </div>
-        <div className="text-white/60">
-          <div>© {new Date().getFullYear()} GNUS. All rights reserved.</div>
-          <div className="mt-2 flex gap-4">
-            <a href="#" className="hover:text-white">
-              Terms
+          <div className="space-y-2">
+            <div className="font-medium text-white">Community</div>
+            <a href="#ecosystem" className="block text-white/70 hover:text-white">
+              Ecosystem
             </a>
-            <a href="#" className="hover:text-white">
-              Privacy
+            <a href="#" className="block text-white/70 hover:text-white">
+              Blog
             </a>
-            <a href="#" className="hover:text-white">
-              Security
+            <a href="#" className="block text-white/70 hover:text-white">
+              Contact
+            </a>
+          </div>
+          <div className="space-y-2">
+            <div className="font-medium text-white">Contact</div>
+            <a href="#ecosystem" className="block text-white/70 hover:text-white">
+              Ecosystem
+            </a>
+            <a href="#" className="block text-white/70 hover:text-white">
+              Blog
+            </a>
+            <a href="#" className="block text-white/70 hover:text-white">
+              Contact
             </a>
           </div>
         </div>
       </div>
+        <div className="text-white/60">
+          <div>© {new Date().getFullYear()} GNUS. All rights reserved.</div>
+        </div>
+
     </footer>
   );
 }
