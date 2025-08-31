@@ -228,7 +228,7 @@ function Hero({ accent }) {
           Turning smart devices into a global AI engine.
         </h1>
         <p className="text-white/80 mt-5 max-w-2xl text-lg">
-          GNUS helps businesses cut GPU compute costs by 80%, while enabling developers to earn revenue from their users' idle devices.
+          GNUS helps businesses slash 80% of GPU compute costs, while enabling developers to earn revenue from their users' idle devices.
         </p>
       </div>
     </section>
