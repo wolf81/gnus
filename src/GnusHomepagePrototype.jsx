@@ -4,12 +4,12 @@ import React, { useState } from "react";
 const ACCENTS = {
   business: { key: "business", name: "Businesses", color: "#18AEF0" }, // teal‑blue
   developer: { key: "developer", name: "Developers", color: "#36EDB5" }, // teal‑green
-  crypto: { key: "crypto", name: "Crypto / Web3", color: "#A66CFF" }, // violet
+  // crypto: { key: "crypto", name: "Crypto / Web3", color: "#A66CFF" }, // REMOVE
 };
 
 // Dev-time sanity checks (non-breaking)
 if (typeof window !== "undefined") {
-  console.assert(ACCENTS.business && ACCENTS.developer && ACCENTS.crypto, "ACCENTS map is missing keys");
+  console.assert(ACCENTS.business && ACCENTS.developer, "ACCENTS map is missing keys");
 }
 
 // ---- Muted, textured UI helpers ----
@@ -163,12 +163,7 @@ function Nav({ accent, setAccent }) {
         </nav>
         <div className="flex items-center gap-3">
           <AccentSwitcher accent={accent} setAccent={setAccent} />
-          <a
-            href="#cta"
-            className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 text-sm"
-          >
-            Start Building
-          </a>
+          {/* Removed "Start Building" button */}
         </div>
       </div>
     </header>
@@ -179,7 +174,7 @@ function Nav({ accent, setAccent }) {
 function PageBackground() {
   const teal = ACCENTS.developer.color;
   const blue = ACCENTS.business.color;
-  const violet = ACCENTS.crypto.color;
+  // const violet = ACCENTS.crypto.color; // REMOVE
   return (
     <div className="fixed inset-0 -z-10 pointer-events-none" aria-hidden="true">
       {/* base */}
@@ -191,7 +186,7 @@ function PageBackground() {
           backgroundImage: `
             radial-gradient(60% 50% at 15% 20%, ${teal}33 0, transparent 60%),
             radial-gradient(55% 45% at 85% 25%, ${blue}33 0, transparent 60%),
-            radial-gradient(70% 60% at 50% 100%, ${violet}29 0, transparent 60%)
+            radial-gradient(70% 60% at 50% 100%, #A66CFF29 0, transparent 60%)
           `,
           filter: "saturate(90%) contrast(95%)",
         }}
@@ -231,7 +226,7 @@ function Hero({ accent }) {
     <section className="relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 pt-16 pb-10 md:pt-20 md:pb-12 relative z-10">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-6">
-          <span className="w-2.5 h-2.5 rounded-full" style={{ background: ACCENTS.crypto.color }} />
+          <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#A66CFF" }} />
           <span className="text-xs text-white/70">Decentralized GPU network</span>
         </div>
         <h1 className="text-4xl md:text-6xl font-semibold leading-tight max-w-3xl">
@@ -437,7 +432,7 @@ function HowItWorks({ accent }) {
             <div key={i} className="rounded-2xl p-6 border border-white/10 bg-white/[0.02]">
               <div
                 className="w-10 h-10 rounded-full flex items-center justify-center mb-3 text-black font-bold"
-                style={{ background: ACCENTS.crypto.color }}
+                style={{ background: "#A66CFF" }}
               >
                 {i + 1}
               </div>
@@ -1041,3 +1036,4 @@ export default function GnusHomepagePrototype() {
     </>
   );
 }
+
