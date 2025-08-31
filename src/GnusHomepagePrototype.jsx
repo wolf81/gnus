@@ -62,32 +62,39 @@ function texturedUnderlineStyle(color) {
   };
 }
 
+// Accepts `children` (the logo content) and an optional `color` override
+export function LogoWrap({ children, color }) {
+  const violet = color ?? "#A66CFF"; // fallback if ACCENTS not passed in
+
+  return (
+    <div
+      className="h-14 flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] px-4 relative overflow-hidden"
+      style={{
+        backgroundImage: `
+          radial-gradient(1px 1px at 25% 30%, rgba(255,255,255,0.08) 0, transparent 1.5px),
+          radial-gradient(1px 1px at 70% 65%, rgba(0,0,0,0.06) 0, transparent 1.5px),
+          repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 3px)
+        `,
+        boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.06)",
+        filter: "saturate(88%) brightness(98%)",
+      }}
+    >
+      <div className="opacity-95" style={{ color: violet }}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
 // ---- GNUS Logo (inline SVG — stable) ----
 function GnusLogo({ size = 32 }) {
-  const gid = `gnusGrad-${Math.random().toString(36).slice(2, 7)}`;
   return (
-    <svg
+    <img
+      src="/gnus-logo-64.png"
+      alt="GNUS logo"
       width={size}
       height={size}
-      viewBox="0 0 64 64"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-label="GNUS logo"
-      role="img"
-    >
-      <defs>
-        <linearGradient id={gid} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#36EDB5" />
-          <stop offset="50%" stopColor="#18AEF0" />
-          <stop offset="100%" stopColor="#A66CFF" />
-        </linearGradient>
-      </defs>
-      <rect x="2" y="2" width="60" height="60" rx="14" fill={`url(#${gid})`} opacity="0.25" />
-      <circle cx="32" cy="32" r="16" stroke="#FFFFFF" strokeWidth="2" opacity="0.9" />
-      <path d="M20 36c6-10 18-10 24 0" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
-      <circle cx="26" cy="28" r="2" fill="#FFFFFF" />
-      <circle cx="38" cy="28" r="2" fill="#FFFFFF" />
-    </svg>
+    />
   );
 }
 
@@ -116,8 +123,10 @@ function Nav({ accent, setAccent }) {
     <header className="relative z-20 bg-black/50 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <GnusLogo size={32} />
-          <span className="font-semibold tracking-wide">GNUS</span>
+          <LogoWrap>
+            <GnusLogo size={32} />
+          </LogoWrap>
+          <span className="font-semibold tracking-wide">GNUS.AI</span>
         </div>
         <nav className="hidden md:flex items-center gap-6 text-sm text-white/80">
           <a href="#how" className="hover:text-white">
@@ -280,6 +289,16 @@ function DualProposition({ accent }) {
             <rect x="17" y="3" width="4" height="17" rx="1" />
           </svg>
         );
+      case "dollar":
+        return (
+    <svg {...common}>
+      {/* vertical spine */}
+      <path d="M12 4v16" />
+      {/* shortened, centered S shape */}
+      <path d="M16 9c0-1.5-2-2.5-4-2.5s-4 1-4 2.5c0 2.5 8 2.5 8 5 0 1.5-2 2.5-4 2.5s-4-1-4-2.5" />
+    </svg>
+
+);        
       default:
         return null;
     }
@@ -355,7 +374,7 @@ function DualProposition({ accent }) {
             Connect your app's users to our GPU network and earn revenue from their unused processing power.
           </p>
           <ul className="mt-6 space-y-3 text-sm">
-            <Bullet icon="trend" text="Passive income" color={devAccent} />
+            <Bullet icon="dollar" text="Passive income" color={devAccent} />
             <Bullet icon="plug" text="Easy integration" color={devAccent} />
             <Bullet icon="chart" text="Real-time analytics" color={devAccent} />
           </ul>
@@ -397,7 +416,7 @@ function HowItWorks({ accent }) {
   return (
     <section className="relative" id="how">
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-semibold">Simple. Secure. Scalable</h2>
+        <h2 className="text-3xl font-semibold">How It Works</h2>
         <div
           className="mt-2 h-1.5 w-24 rounded"
           style={texturedUnderlineStyle(ACCENTS.business.color)}
@@ -537,24 +556,24 @@ function ClientsPartners({ accent }) {
   // Logos use brand violet with a subtle retro paper texture in the tile
   const violet = ACCENTS.crypto.color;
 
-  const LogoWrap = ({ children }) => (
-    <div
-      className="h-14 flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] px-4 relative overflow-hidden"
-      style={{
-        backgroundImage: `
-          radial-gradient(1px 1px at 25% 30%, rgba(255,255,255,0.08) 0, transparent 1.5px),
-          radial-gradient(1px 1px at 70% 65%, rgba(0,0,0,0.06) 0, transparent 1.5px),
-          repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 3px)
-        `,
-        boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.06)",
-        filter: "saturate(88%) brightness(98%)",
-      }}
-    >
-      <div className="opacity-95" style={{ color: violet }}>
-        {children}
-      </div>
-    </div>
-  );
+  // const LogoWrap = ({ children }) => (
+  //   <div
+  //     className="h-14 flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] px-4 relative overflow-hidden"
+  //     style={{
+  //       backgroundImage: `
+  //         radial-gradient(1px 1px at 25% 30%, rgba(255,255,255,0.08) 0, transparent 1.5px),
+  //         radial-gradient(1px 1px at 70% 65%, rgba(0,0,0,0.06) 0, transparent 1.5px),
+  //         repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 3px)
+  //       `,
+  //       boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.06)",
+  //       filter: "saturate(88%) brightness(98%)",
+  //     }}
+  //   >
+  //     <div className="opacity-95" style={{ color: violet }}>
+  //       {children}
+  //     </div>
+  //   </div>
+  // );
 
   const Bandcamp = () => (
     <svg
@@ -678,8 +697,9 @@ function Ecosystem({ accent }) {
         style={texturedUnderlineStyle(ACCENTS.business.color)}
       />
       <p className="text-white/80 mt-2">Explore the wider services GNUS offers.</p>
-      <div className="mt-8 grid md:grid-cols-3 gap-6">
+      <div className="mt-8 grid md:grid-cols-4 gap-6">
         {[
+          { t: "GPU Patent", d: "To protect and secure our unique technology." },
           { t: "GNUS Token", d: "Utility token needed for processing AI tasks." },
           { t: "GNUS Ventures", d: "Partner apps, AI solutions, and white-label services." },
           { t: "Crypto Wallet", d: "Secure, fast, and integrated into the platform." },
@@ -954,7 +974,9 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-6 text-sm">
         <div>
           <div className="flex items-center gap-2">
-            <GnusLogo size={28} />
+            <LogoWrap>
+              <GnusLogo size={28} />
+            </LogoWrap>
             <span className="font-semibold">GNUS</span>
           </div>
           <p className="text-white/70 mt-2">Decentralized GPU network for affordable AI compute.</p>
