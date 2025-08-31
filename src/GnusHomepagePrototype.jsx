@@ -1059,7 +1059,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="text-white/60">
+      <div className="font-medium text-white/70 text-center pb-6">
         <div>© {new Date().getFullYear()} GNUS. All rights reserved.</div>
       </div>
     </footer>
