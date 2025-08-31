@@ -361,15 +361,15 @@ function DualProposition({ accent }) {
             className="text-xl md:text-2xl font-semibold tracking-tight md:whitespace-nowrap"
             style={{ color: businessAccent }}
           >
-            Need GPU Power?
+            Unlock Top-Tier GPU Power
           </h3>
           <p className="text-white/80 mt-4 text-base md:text-lg max-w-prose">
             Scale your AI, ML, and rendering workloads with our distributed GPU network. Pay only for what you use.
           </p>
           <ul className="mt-6 space-y-3 text-sm">
-            <Bullet icon="bolt" text="Up to 80% lower GPU costs" color={businessAccent} />
-            <Bullet icon="trend" text="Spin up in minutes" color={businessAccent} />
-            <Bullet icon="support" text="SLA-backed 24/7 support" color={businessAccent} />
+            <Bullet icon="bolt" text="Up to 80% lower GPU costs vs. cloud giants" color={businessAccent} />
+            <Bullet icon="trend" text="Scale instantly in minutes" color={businessAccent} />
+            <Bullet icon="support" text="24/7 expert support inluded" color={businessAccent} />
           </ul>
           <div className="mt-auto pt-8">
             <TexturedButton color={businessAccent} href="#">Get GPU Power <span aria-hidden="true">→</span></TexturedButton>
@@ -382,15 +382,15 @@ function DualProposition({ accent }) {
             className="text-xl md:text-2xl font-semibold tracking-tight md:whitespace-nowrap"
             style={{ color: devAccent }}
           >
-            Monetize Your User Base?
+            Monetize Your User Base
           </h3>
           <p className="text-white/80 mt-4 text-base md:text-lg max-w-prose">
             Connect your app's users to our GPU network and earn revenue from their unused processing power.
           </p>
           <ul className="mt-6 space-y-3 text-sm">
-            <Bullet icon="dollar" text="Passive income" color={devAccent} />
-            <Bullet icon="plug" text="Easy integration" color={devAccent} />
-            <Bullet icon="chart" text="Real-time analytics" color={devAccent} />
+            <Bullet icon="dollar" text="Earn $2/month per user" color={devAccent} />
+            <Bullet icon="plug" text="Zero friction on user experience" color={devAccent} />
+            <Bullet icon="chart" text="Live revenue dashboard" color={devAccent} />
           </ul>
           <div className="mt-auto pt-8">
             <TexturedButton color={devAccent} href="#">Start Earning <span aria-hidden="true">→</span></TexturedButton>
@@ -994,25 +994,34 @@ function Footer() {
           <div className="space-y-2">
             <div className="font-medium text-white">For Developers</div>
             <a href="#ecosystem" className="block text-white/70 hover:text-white">
-              Ecosystem
+              Integrate with GNUS
             </a>
             <a href="#" className="block text-white/70 hover:text-white">
-              Blog
+              Revenue Model
             </a>
             <a href="#" className="block text-white/70 hover:text-white">
-              Contact
+              Use Cases
+            </a>
+            <a href="#" className="block text-white/70 hover:text-white">
+              Docs
+            </a>
+            <a href="#" className="block text-white/70 hover:text-white">
+              Join the Developer Program
             </a>
           </div>
           <div className="space-y-2">
             <div className="font-medium text-white">Resources</div>
             <a href="#ecosystem" className="block text-white/70 hover:text-white">
-              Terms
+              Docs
             </a>
             <a href="#" className="block text-white/70 hover:text-white">
-              Privacy
+              Blo
             </a>
             <a href="#" className="block text-white/70 hover:text-white">
-              Security
+              FAQ
+            </a>
+            <a href="#" className="block text-white/70 hover:text-white">
+              Help Center
             </a>
           </div>
           <div className="space-y-2">
@@ -1021,46 +1030,43 @@ function Footer() {
               About
             </a>
             <a href="#" className="block text-white/70 hover:text-white">
-              Blog
+              Team
             </a>
             <a href="#" className="block text-white/70 hover:text-white">
-              Contact
-            </a>
-          </div>
-          <div className="space-y-2">
-            <div className="font-medium text-white">Company</div>
-            <a href="#ecosystem" className="block text-white/70 hover:text-white">
-              Ecosystem
+              Portfolio
             </a>
             <a href="#" className="block text-white/70 hover:text-white">
-              Blog
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Contact
+              Investing
             </a>
           </div>
           <div className="space-y-2">
             <div className="font-medium text-white">Community</div>
             <a href="#ecosystem" className="block text-white/70 hover:text-white">
-              Ecosystem
+              X / Twitter
             </a>
             <a href="#" className="block text-white/70 hover:text-white">
-              Blog
+              YouTube
             </a>
             <a href="#" className="block text-white/70 hover:text-white">
-              Contact
+              Instagram
+            </a>
+            <a href="#" className="block text-white/70 hover:text-white">
+              Telegram
+            </a>
+            <a href="#" className="block text-white/70 hover:text-white">
+              Ambassador Program
             </a>
           </div>
           <div className="space-y-2">
             <div className="font-medium text-white">Contact</div>
             <a href="#ecosystem" className="block text-white/70 hover:text-white">
-              Ecosystem
+              Get in Touch
             </a>
             <a href="#" className="block text-white/70 hover:text-white">
-              Blog
+              Contact Sales
             </a>
             <a href="#" className="block text-white/70 hover:text-white">
-              Contact
+              Investor Inquiries
             </a>
           </div>
         </div>
