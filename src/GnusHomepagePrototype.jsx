@@ -90,7 +90,7 @@ export function LogoWrap({ children, color }) {
 function GnusLogo({ size = 32 }) {
   return (
     <img
-      src="/gnus-logo-64.png"
+      src="gnus-logo-64.png"
       alt="GNUS logo"
       width={size}
       height={size}
@@ -291,14 +291,13 @@ function DualProposition({ accent }) {
         );
       case "dollar":
         return (
-    <svg {...common}>
-      {/* vertical spine */}
-      <path d="M12 4v16" />
-      {/* shortened, centered S shape */}
-      <path d="M16 9c0-1.5-2-2.5-4-2.5s-4 1-4 2.5c0 2.5 8 2.5 8 5 0 1.5-2 2.5-4 2.5s-4-1-4-2.5" />
-    </svg>
-
-);        
+          <svg {...common}>
+            {/* vertical spine */}
+            <path d="M12 4v16" />
+            {/* shortened, centered S shape */}
+            <path d="M16 9c0-1.5-2-2.5-4-2.5s-4 1-4 2.5c0 2.5 8 2.5 8 5 0 1.5-2 2.5-4 2.5s-4-1-4-2.5" />
+          </svg>
+        );        
       default:
         return null;
     }
