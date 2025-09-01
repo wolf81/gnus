@@ -982,7 +982,7 @@ function Footer() {
               Pricing
             </a>
             <a href="#dev" className="block text-white/70 hover:text-white">
-              Customers
+              Customer Stories
             </a>
             <a href="#dev" className="block text-white/70 hover:text-white">
               Docs
