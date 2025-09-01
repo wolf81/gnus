@@ -150,7 +150,7 @@ function Nav({ accent, setAccent }) {
         </div>
         <nav className="hidden md:flex items-center gap-6 text-sm text-white/80">
           <a href="#how" className="hover:text-white">
-            How it works
+            How It Works
           </a>
           <a href="#business" className="hover:text-white">
             Businesses
@@ -159,16 +159,16 @@ function Nav({ accent, setAccent }) {
             Developers
           </a>
           <a href="#ecosystem" className="hover:text-white">
-            Ecosystem
+            Use Cases
           </a>
           <a href="#news" className="hover:text-white">
-            What’s New
+            Docs
           </a>
           <a href="#team" className="hover:text-white">
-            Team
+            Ecosystem
           </a>
           <a href="#docs" className="hover:text-white">
-            Docs
+            About
           </a>
         </nav>
         <div className="flex items-center gap-3">
@@ -478,7 +478,7 @@ function HowItWorks({ accent }) {
             </ul>
             <div className="mt-auto pt-6">
               <TexturedButton color={businessAccent} href="#">
-                book a free consultation <span aria-hidden="true">→</span>
+                Book a free consultation <span aria-hidden="true">→</span>
               </TexturedButton>
             </div>
           </div>
@@ -507,7 +507,7 @@ function HowItWorks({ accent }) {
             </ul>
             <div className="mt-auto pt-6">
               <TexturedButton color={developerAccent} href="#">
-                join the developer program <span aria-hidden="true">→</span>
+                Join the developer program <span aria-hidden="true">→</span>
               </TexturedButton>
             </div>
           </div>
@@ -845,7 +845,7 @@ function LeadershipTeam({ accent }) {
         style={texturedUnderlineStyle(ACCENTS.blue)}
       />
       <p className="text-white/80 mt-6 max-w-3xl">
-        Built by Top Talent from Nvidia, Google, Amazon, and more. Dedicated to making AI compute
+        Built by Top Talent from NVIDIA, Google, Amazon, and more. Dedicated to making AI compute
         affordable and accessible.
       </p>
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -935,7 +935,7 @@ function CTA({ accent }) {
             </p>
             <div className="mt-6">
               <TexturedButton color={businessAccent} href="#contact">
-                Contact Sales <span aria-hidden="true">→</span>
+                Contact sales <span aria-hidden="true">→</span>
               </TexturedButton>
             </div>
           </div>
@@ -950,7 +950,7 @@ function CTA({ accent }) {
             </p>
             <div className="mt-6">
               <TexturedButton color={devAccent} href="#dev-program">
-                Join Developer Program <span aria-hidden="true">→</span>
+                Join the developer program <span aria-hidden="true">→</span>
               </TexturedButton>
             </div>
           </div>
@@ -1015,7 +1015,7 @@ function Footer() {
               Docs
             </a>
             <a href="#" className="block text-white/70 hover:text-white">
-              Blo
+              Blog
             </a>
             <a href="#" className="block text-white/70 hover:text-white">
               FAQ
@@ -1072,7 +1072,7 @@ function Footer() {
         </div>
       </div>
       <div className="font-medium text-white/70 text-center pb-6">
-        <div>© {new Date().getFullYear()} GNUS. All rights reserved.</div>
+        <div>© {new Date().getFullYear()} GNUS.AI All rights reserved.</div>
       </div>
     </footer>
   );
