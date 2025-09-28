@@ -2,7 +2,7 @@ import { texturedUnderlineStyle } from "../components/ui/styles";
 import { TexturedButton } from "../components/ui/TexturedButton";
 import { ACCENTS } from "../constants/accents";
 
-export function HowItWorks() {
+export default function HowItWorks() {
   const businessAccent = ACCENTS.blue;
   const developerAccent = ACCENTS.teal;
 

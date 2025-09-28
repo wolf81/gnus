@@ -1,7 +1,7 @@
 import { texturedUnderlineStyle } from "../components/ui/styles";
 import { ACCENTS } from "../constants/accents";
 
-export function Ecosystem({ accent }: { accent: string }) {
+export default function Ecosystem({ accent }: { accent: string }) {
   return (
     <section className="max-w-7xl mx-auto px-4 py-16" id="ecosystem">
       <h2 className="text-3xl font-semibold">GNUS Ecosystem</h2>

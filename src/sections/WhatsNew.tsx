@@ -2,7 +2,7 @@ import { texturedUnderlineStyle } from "../components/ui/styles";
 import { TexturedButton } from "../components/ui/TexturedButton";
 import { ACCENTS } from "../constants/accents";
 
-export function WhatsNew({ accent }: { accent?: string }) {
+export default function WhatsNew({ accent }: { accent?: string }) {
     accent = accent ?? ACCENTS.blue
     
   return (

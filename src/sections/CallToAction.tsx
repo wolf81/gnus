@@ -1,7 +1,7 @@
 import { TexturedButton } from "../components/ui/TexturedButton";
 import { ACCENTS } from "../constants/accents";
 
-export function CallToAction() {
+export default function CallToAction() {
   const businessAccent = ACCENTS.blue; // blue (Sales)
   const devAccent = ACCENTS.teal; // teal/green (Developers)
 

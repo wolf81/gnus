@@ -1,7 +1,7 @@
 import { texturedUnderlineStyle } from "../components/ui/styles";
 import { ACCENTS } from "../constants/accents";
 
-export function LeadershipTeam({ accent }: { accent?: string }) {
+export default function LeadershipTeam({ accent }: { accent?: string }) {
     accent = accent ?? ACCENTS.blue
     
   const team = [

@@ -1,7 +1,7 @@
 import { texturedUnderlineStyle } from "../components/ui/styles";
 import { ACCENTS } from "../constants/accents";
 
-export function NetworkPerformance() {
+export default function NetworkPerformance() {
   const stats = [
     { value: "60K", label: "Active GPUs" },
     { value: "2.5M", label: "Compute Hours" },

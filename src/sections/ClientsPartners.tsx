@@ -2,7 +2,7 @@ import { ContentWrap } from "../components/ui/ContentWrap";
 import { texturedUnderlineStyle } from "../components/ui/styles";
 import { ACCENTS } from "../constants/accents";
 
-export function ClientsPartners() {
+export default function ClientsPartners() {
   const Bandcamp = () => (
     <svg
       viewBox="0 0 140 32"

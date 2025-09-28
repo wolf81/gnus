@@ -1,4 +1,4 @@
-export function Hero() {
+export default function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 pt-16 pb-10 md:pt-20 md:pb-12 relative z-10">

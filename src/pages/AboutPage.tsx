@@ -1,4 +1,4 @@
-import { CallToAction } from "../sections/CallToAction";
+import CallToAction from "../sections/CallToAction";
 
 export default function AboutPage() {
   return (

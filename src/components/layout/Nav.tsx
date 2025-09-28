@@ -3,7 +3,7 @@ import { ACCENTS } from "../../constants/accents";
 import { GnusLogo } from "../graphics/GnusLogo";
 import { SmallTexturedButton } from "../ui/SmallTexturedButton";
 
-export function Nav() {
+export default function Nav() {
   return (
     <header className="relative z-20 bg-black/50 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">

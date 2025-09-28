@@ -1,7 +1,7 @@
 import { ACCENTS } from "../../constants/accents";
 
 // Page-wide retro space background (CSS-only, fixed behind content)
-export function PageBackground() {
+export default function PageBackground() {
   const teal = ACCENTS.teal;
   const blue = ACCENTS.blue;
 

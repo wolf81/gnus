@@ -2,7 +2,7 @@ import { texturedChipStyle } from "../components/ui/styles";
 import { TexturedButton } from "../components/ui/TexturedButton";
 import { ACCENTS } from "../constants/accents";
 
-export function DualProposition() {
+export default function DualProposition() {
   const businessAccent = ACCENTS.blue;
   const devAccent = ACCENTS.teal;
 

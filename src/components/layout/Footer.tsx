@@ -1,6 +1,6 @@
 import { GnusLogo } from "../graphics/GnusLogo";
 
-export function Footer() {
+export default function Footer() {
   return (
     <footer className="border-t border-white/10 mt-16">
       <div className="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-[minmax(0,220px)_1fr] gap-6 text-sm">
