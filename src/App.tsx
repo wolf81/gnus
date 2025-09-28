@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/gnus">
       <PageBackground />
       <Nav />        
 
