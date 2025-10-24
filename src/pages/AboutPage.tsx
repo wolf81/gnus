@@ -1,11 +1,8 @@
-import CallToAction from "../sections/CallToAction";
-
-export default function AboutPage() {
+export default function About() {
   return (
-    <>
-      <main>
-        <CallToAction />
-      </main>
-    </>
-  );
-};
+    <div>
+      <h1 className="text-2xl font-bold">About</h1>
+      <p className="mt-2">About this site.</p>
+    </div>
+  )
+}

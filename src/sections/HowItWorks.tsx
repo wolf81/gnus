@@ -1,119 +1,111 @@
-import { texturedUnderlineStyle } from "../components/ui/styles";
-import { TexturedButton } from "../components/ui/TexturedButton";
-import { ACCENTS } from "../constants/accents";
+import type { ReactNode } from "react";
+import SectionHeader from "../components/layout/SectionHeader";
+import Button from "../components/ui/Button";
+import Card from "../components/ui/Card";
+import Icon from "../components/ui/Icon";
+import Seperator from "../components/layout/Seperator";
+import HowTo1 from "../assets/graphics/howto_1.png"
+import HowTo2 from "../assets/graphics/howto_2.png"
+import HowTo3 from "../assets/graphics/howto_3.png"
+import HowTo4 from "../assets/graphics/howto_4.png"
+import GradientButton from "../components/ui/GradientButton";
+import Raster from "../components/layout/Raster";
+
+function NetworkPerformance() {
+  return (
+    <div className="relative pt-[3.75rem]">
+      <div>NETWORK PERFORMANCE</div>
+      <div className="flex gap-6 pt-6">
+        <div className="flex-1">
+          <div className="text-[2.75rem] text-white">60K</div>
+          <div>Active GPUs</div>
+        </div>
+        <div className="flex-1">
+          <div className="text-[2.75rem] text-white">2.5M</div>
+          <div>Compute Hours</div>
+        </div>
+        <div className="flex-1">
+          <div className="text-[2.75rem] text-white">468M</div>
+          <div>Tasks processed</div>
+        </div>
+        <div className="flex-1">
+          <div className="text-[2.75rem] text-white">400+</div>
+          <div>Active Projects</div>
+        </div>
+        <div className="flex-1">
+          <div className="text-[2.75rem] text-white">12M</div>
+          <div>Devices connected</div>
+        </div>
+        <div className="flex-1">
+          <div className="text-[2.75rem] text-white">0.7M</div>
+          <div>GNUS tokens burned</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function TargetAudienceCard({ title, callToAction, buttonAccent, borderAccent, children }: { title: string, callToAction: string, buttonAccent: string, borderAccent: string, children: ReactNode }) {
+  return (
+    <Card borderAccent={borderAccent}>
+      <div className="absolute w-64 h-64 top-[-2rem] left-[-2rem] bg-cyan-500 opacity-20 blur-[180px] rounded-full" />
+      <div className="text-lg text-white mb-2">{title}</div>
+      <div>{children}</div>
+      <Button className="w-full mt-4" accent={buttonAccent}>{callToAction}</Button>
+    </Card>
+  )
+}
+
+function StepCard({ image, title, buttonTitle, description }: { image: string, title: string, buttonTitle: string, description: string }) {
+  return (
+    <>
+      <Card className="px-5" hideGradient>
+        <img src={image} className="pb-4" />
+        <GradientButton title={buttonTitle} />
+        <div className="text-[1.375rem] text-white pt-4 text-left">{title}</div>
+        <div className="text-xs text-left">{description}</div>
+      </Card>
+    </>
+  )
+}
 
 export default function HowItWorks() {
-  const businessAccent = ACCENTS.blue;
-  const developerAccent = ACCENTS.teal;
-
-  const steps = [
-    { title: "Idle power, activated", text: "Devices contribute unused GPU/CPU capacity." },
-    { title: "Workload distribution", text: "GNUS securely assigns AI tasks in the background." },
-    { title: "On-chain validation", text: "Results are verified with blockchain and zero-knowledge proofs." },
-    { title: "Mutual benefit", text: "Businesses access compute • Developers earn rewards." },
-  ];
-
-  const Check = ({ color = "#fff", size = 16 }) => (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke={color}
-      strokeWidth="2.2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M20 6L9 17l-5-5" />
-    </svg>
-  );
-
   return (
-    <section className="relative" id="how">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-semibold">How It Works</h2>
-        <div
-          className="mt-2 h-1.5 w-24 rounded"
-          style={texturedUnderlineStyle(ACCENTS.blue)}
-        />
-        <p className="text-white/80 mt-2">Get started in minutes with our streamlined processes.</p>
-        {/* 4-step explainer */}
-        <div className="mt-8 grid md:grid-cols-4 gap-6">
-          {steps.map((s, i) => (
-            <div key={i} className="rounded-2xl p-6 border border-white/10 bg-white/[0.02]">
-              <div
-                className="w-10 h-10 rounded-full flex items-center justify-center mb-3 text-black font-bold"
-                style={{ background: "#A66CFF" }}
-              >
-                {i + 1}
-              </div>
-              <h4 className="font-medium">{s.title}</h4>
-              <p className="text-white/80 mt-1 text-sm">{s.text}</p>
-            </div>
-          ))}
-        </div>
-        {/* Persona flows */}
-        <div className="mt-10 grid md:grid-cols-2 gap-6 items-stretch">
-          {/* For Businesses */}
-          <div className="rounded-3xl p-6 border border-white/10 bg-white/[0.03] shadow-sm flex flex-col">
-            <h3 className="text-xl font-semibold" style={{ color: businessAccent }}>
-              For Businesses
-            </h3>
-            <ul className="mt-4 space-y-2 text-sm text-white/90">
-              <li className="flex items-center gap-2">
-                <Check color={businessAccent} size={16} />
-                <span>Define requirements</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Check color={businessAccent} size={16} />
-                <span>Connect to Network</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Check color={businessAccent} size={16} />
-                <span>Start Processing</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Check color={businessAccent} size={16} />
-                <span>Pay as you use</span>
-              </li>
-            </ul>
-            <div className="mt-auto pt-6">
-              <TexturedButton color={businessAccent} href="#">
-                Book a free consultation <span aria-hidden="true">→</span>
-              </TexturedButton>
-            </div>
+    <>
+      <SectionHeader title="How It Works" description="Get started in minutes with our streamlined processes." />
+      <div className="relative">
+        <Raster />
+
+        <div className="relative z-10">
+          <div className="flex gap-6 pt-8">
+            <StepCard image={HowTo1} buttonTitle="Step One" title="Collecting idle power" description="Devices contribute unused GPU/CPU capacity." />
+            <StepCard image={HowTo2} buttonTitle="Step Two" title="Workload distribution" description="GNUS securely assigns AI tasks in the background." />
+            <StepCard image={HowTo3} buttonTitle="Step Three" title="On-chain validation" description="Results are verified with blockchain and zero-knowledge proofs." />
+            <StepCard image={HowTo4} buttonTitle="Step Four" title="Mutual benefit" description="Businesses access compute & Developers earn rewards." />
           </div>
-          {/* For Developers */}
-          <div className="rounded-3xl p-6 border border-white/10 bg-white/[0.03] shadow-sm flex flex-col">
-            <h3 className="text-xl font-semibold" style={{ color: developerAccent }}>
-              For Developers
-            </h3>
-            <ul className="mt-4 space-y-2 text-sm text-white/90">
-              <li className="flex items-center gap-2">
-                <Check color={developerAccent} size={16} />
-                <span>Integrate SDK in 30 minutes</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Check color={developerAccent} size={16} />
-                <span>User Opt-In</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Check color={developerAccent} size={16} />
-                <span>Contribute power</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Check color={developerAccent} size={16} />
-                <span>Earn revenue</span>
-              </li>
-            </ul>
-            <div className="mt-auto pt-6">
-              <TexturedButton color={developerAccent} href="#">
-                Join the developer program <span aria-hidden="true">→</span>
-              </TexturedButton>
-            </div>
+          <div className="flex gap-6 pt-8">
+            <TargetAudienceCard title="For Businesses" callToAction="Book a free consulation" buttonAccent="bg-accent-primary" borderAccent="border-accent-primary">
+              <div className="flex space-x-3"><Icon name="clock" accent="accent-primary" /><div>Define requirements</div></div>
+              <Seperator />
+              <div className="flex space-x-3"><Icon name="cloud" accent="accent-primary" /><div>Connect to Network</div></div>
+              <Seperator />
+              <div className="flex space-x-3"><Icon name="cpu" accent="accent-primary" /><div>Start Processing</div></div>
+              <Seperator />
+              <div className="flex space-x-3"><Icon name="dollar" accent="accent-primary" /><div>Earn revenue</div></div>
+            </TargetAudienceCard>
+            <TargetAudienceCard title="For Developers" callToAction="Join the developer program" buttonAccent="bg-accent-secondary" borderAccent="border-accent-secondary">
+              <div className="flex space-x-3"><Icon name="clock" accent="accent-secondary" /><div>Integrate SDK in 30 minutes</div></div>
+              <Seperator />
+              <div className="flex space-x-3"><Icon name="user" accent="accent-secondary" /><div>User Opt-In</div></div>
+              <Seperator />
+              <div className="flex space-x-3"><Icon name="clock" accent="accent-secondary" /><div>Contribute power</div></div>
+              <Seperator />
+              <div className="flex space-x-3"><Icon name="dollar" accent="accent-secondary" /><div>Earn revenue</div></div>
+            </TargetAudienceCard>
           </div>
         </div>
       </div>
-    </section>
+      <NetworkPerformance />
+    </>
   );
 }

@@ -1,25 +1,24 @@
 import './App.css'
-import Footer from './components/layout/Footer';
-import Nav from './components/layout/Nav';
-import PageBackground from './components/layout/PageBackground';
-import AboutPage from './pages/AboutPage';
-import HomePage from './pages/HomePage';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom'
+import NotFoundPage from './pages/NotFoundPage'
+import AboutPage from './pages/AboutPage'
+import HomePage from './pages/HomePage'
+import MainLayout from './components/layout/MainLayout'
+import Nav from './components/layout/Nav'
+import HowItWorksPage from './pages/HowItWorksPage'
+import Footer from './components/layout/Footer'
 
-const App: React.FC = () => {
+export default function App() {
   return (
-    <Router basename="/gnus">
-      <PageBackground />
-      <Nav />        
-
+    <MainLayout>
+      <Nav />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/how-it-works" element={<HowItWorksPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
-
       <Footer />
-    </Router>
-  );
-};
-
-export default App
+    </MainLayout>
+  )
+}

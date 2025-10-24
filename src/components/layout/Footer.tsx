@@ -1,119 +1,67 @@
-import { GnusLogo } from "../graphics/GnusLogo";
+import Seperator from "./Seperator";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 mt-16">
-      <div className="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-[minmax(0,220px)_1fr] gap-6 text-sm">
-        <div>
-          <div className="flex items-center gap-2">
-            <GnusLogo size={28} />
-            <span className="font-semibold">GNUS</span>
+    <>
+      <div className="relative text-xs pt-[7.5rem]">
+        <div className="flex text-xs text-left justify-between">
+          <div className="w-[11.875rem] space-y-1">
+            <div className="text-white pb-3">GNUS.AI</div>
+            <div>Decentralized GPU network for affordable AI compute.</div>
+            <div className="flex gap-2 pt-3"><img src="/linkedin-xs.png" className="w-[18px] h-[16px]" />LinkedIn</div>
           </div>
-          <p className="text-white/70 mt-2">Decentralized GPU network</p>
-          <p className="text-white/70 mt-2">for affordable AI compute.</p>
-        </div>
-        <div className="grid grid-cols-7 gap-6">
-          <div className="space-y-2">
-            <div className="font-medium text-white">For Businesses</div>
-            <a href="#how" className="block text-white/70 hover:text-white">
-              GPU Processing
-            </a>
-            <a href="#business" className="block text-white/70 hover:text-white">
-              Pricing
-            </a>
-            <a href="#dev" className="block text-white/70 hover:text-white">
-              Customer Stories
-            </a>
-            <a href="#dev" className="block text-white/70 hover:text-white">
-              Docs
-            </a>
-             <a href="#dev" className="block text-white/70 hover:text-white">
-              Book a Demo
-            </a>
+          <div className="w-[8.1875rem] space-y-1">
+            <div className="text-white pb-3">For Businesses</div>
+            <div>GPU Processing</div>
+            <div>Pricing</div>
+            <div>Customer Stories</div>
+            <div>Docs</div>
+            <div>Book a Demo</div>
           </div>
-          <div className="space-y-2">
-            <div className="font-medium text-white">For Developers</div>
-            <a href="#ecosystem" className="block text-white/70 hover:text-white">
-              Integrate with GNUS
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Revenue Model
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Use Cases
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Docs
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Join the Developer Program
-            </a>
+          <div className="w-[9.8175rem] space-y-1">
+            <div className="text-white pb-3">For Developers</div>
+            <div>Integrate with GNUS</div>
+            <div>Revenue Model</div>
+            <div>Use Cases</div>
+            <div>Docs</div>
+            <div>Join the Developer Program</div>
           </div>
-          <div className="space-y-2">
-            <div className="font-medium text-white">Resources</div>
-            <a href="#ecosystem" className="block text-white/70 hover:text-white">
-              Docs
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Blog
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              FAQ
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Help Center
-            </a>
+          <div className="w-[5.0625rem] space-y-1">
+            <div className="text-white pb-3">Resources</div>
+            <div>Docs</div>
+            <div>Blog</div>
+            <div>FAQ</div>
+            <div>Help Center</div>
           </div>
-          <div className="space-y-2">
-            <div className="font-medium text-white">Genius Ventures</div>
-            <a href="#ecosystem" className="block text-white/70 hover:text-white">
-              About
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Team
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Portfolio
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Investing
-            </a>
+          <div className="w-[7.875rem] space-y-1">
+            <div className="text-white pb-3">Genius Ventures</div>            
+            <div>About</div>
+            <div>Team</div>
+            <div>Portfolio</div>
+            <div>Investing</div>
           </div>
-          <div className="space-y-2">
-            <div className="font-medium text-white">Community</div>
-            <a href="#ecosystem" className="block text-white/70 hover:text-white">
-              X / Twitter
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              YouTube
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Instagram
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Telegram
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Ambassador Program
-            </a>
+          <div className="w-[6.375rem] space-y-1">
+            <div className="text-white pb-3">Community</div>
+            <div>X / Twitter</div>
+            <div>YouTube</div>
+            <div>Instagram</div>
+            <div>Telegram</div>
+            <div>Ambassador Program</div>
           </div>
-          <div className="space-y-2">
-            <div className="font-medium text-white">Contact</div>
-            <a href="#ecosystem" className="block text-white/70 hover:text-white">
-              Get in Touch
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Contact Sales
-            </a>
-            <a href="#" className="block text-white/70 hover:text-white">
-              Investor Inquiries
-            </a>
+          <div className="w-[5.25rem] space-y-1">
+            <div className="text-white pb-3">Contact</div>
+            <div>Get in Touch</div>
+            <div>Contact Sales</div>
+            <div>Investor Inquiries</div>
           </div>
         </div>
+        <Seperator className="my-8" />
+        <div className="flex gap-4">
+          <div className="flex-1 text-left">© 2025 GNUS.AI All rights reserved.</div>
+          <div className="flex-none">Terms of Service</div>
+          <div className="flex-none">Privacy Policy</div>
+        </div>
       </div>
-      <div className="font-medium text-white/70 text-center pb-6">
-        <div>© {new Date().getFullYear()} GNUS.AI All rights reserved.</div>
-      </div>
-    </footer>
-  );
+    </>
+  )
 }
