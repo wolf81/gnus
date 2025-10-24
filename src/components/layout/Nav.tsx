@@ -7,28 +7,28 @@ export default function Nav() {
       <img src="/gnus/logo.png" alt="Logo" className="px-1 w-10 h-10 aspect-square" />
       <label className="text-sm text-white pl-[0.75rem]">GNUS.AI</label>
       <div className="flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap">
-        <GradientNavLink to="/">
+        <GradientNavLink to="/gnus">
           Home
         </GradientNavLink>
-        <GradientNavLink to="/about">
+        <GradientNavLink to="/gnus/about">
           About
         </GradientNavLink>
-        <GradientNavLink to="/how-it-works">
+        <GradientNavLink to="/gnus/how-it-works">
           How it Works
         </GradientNavLink>
-        <GradientNavLink to="/business">
+        <GradientNavLink to="/gnus/business">
           Business
         </GradientNavLink>
-        <GradientNavLink to="/developers">
+        <GradientNavLink to="/gnus/developers">
           Developers
         </GradientNavLink>
-        <GradientNavLink to="/use-cases">
+        <GradientNavLink to="/gnus/use-cases">
           Use Cases
         </GradientNavLink>
-        <GradientNavLink to="/docs">
+        <GradientNavLink to="/gnus/docs">
           Docs
         </GradientNavLink>
-        <GradientNavLink to="/ecosystem">
+        <GradientNavLink to="/gnus/ecosystem">
           Ecosystem
         </GradientNavLink>
       </div>

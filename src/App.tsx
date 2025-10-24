@@ -13,9 +13,9 @@ export default function App() {
     <MainLayout>
       <Nav />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/how-it-works" element={<HowItWorksPage />} />
+        <Route path="/gnus" element={<HomePage />} />
+        <Route path="/gnus/about" element={<AboutPage />} />
+        <Route path="/gnus/how-it-works" element={<HowItWorksPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
