@@ -14,7 +14,7 @@ import Raster from "../components/layout/Raster";
 function NetworkPerformance() {
   return (
     <div className="relative pt-[3.75rem]">
-      <div>NETWORK PERFORMANCE</div>
+      <div className="text-white text-xs">NETWORK PERFORMANCE</div>
       <div className="flex gap-6 pt-6">
         <div className="flex-1">
           <div className="text-[2.75rem] text-white">60K</div>

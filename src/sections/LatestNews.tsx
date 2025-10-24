@@ -61,7 +61,7 @@ export default function LatestNews() {
                 focus:outline-none focus:ring-0
               "
             />
-          <GradientButton title="Submit" className="w-[19.0625rem] !h-[2.6rem] !rounded-[0.5rem] py-2" />
+          <GradientButton title="Submit" className="w-[19.0625rem] !h-[2.6rem] !rounded-[0.5rem] py-2 font-semibold" />
           </div>
         </div>      
     </>
