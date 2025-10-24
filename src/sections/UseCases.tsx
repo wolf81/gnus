@@ -51,7 +51,7 @@ function UseCaseCard({ title, tag, tagAccent, description, image }: { title: str
             <Pill title={tag} accent={tagAccent} />
             <div className="flex gap-2 pt-[1.66rem]">
               <div className="text-white text-[1.375rem] flex-1">{title}</div>
-              <img src="/arrow-right.png" className="flex-none w-[2rem] h-[2rem]" />
+              <img src="/gnus/arrow-right.png" className="flex-none w-[2rem] h-[2rem]" />
             </div>
             <div className="pt-[1.41rem] text-white/70">{description}</div>
           </div>
