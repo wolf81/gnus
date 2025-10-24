@@ -91,7 +91,7 @@ export default function HowItWorks() {
               <Seperator />
               <div className="flex space-x-3"><Icon name="cpu" accent="accent-primary" /><div>Start Processing</div></div>
               <Seperator />
-              <div className="flex space-x-3"><Icon name="dollar" accent="accent-primary" /><div>Earn revenue</div></div>
+              <div className="flex space-x-3"><Icon name="dollar" accent="accent-primary" /><div>Pay as you use</div></div>
             </TargetAudienceCard>
             <TargetAudienceCard title="For Developers" callToAction="Join the developer program" buttonAccent="bg-accent-secondary" borderAccent="border-accent-secondary">
               <div className="flex space-x-3"><Icon name="clock" accent="accent-secondary" /><div>Integrate SDK in 30 minutes</div></div>
